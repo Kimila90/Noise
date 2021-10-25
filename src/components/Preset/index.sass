@@ -1,0 +1,65 @@
+.preset
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    margin-right: 20px
+    opacity: 0.5
+
+    button
+        visibility: hidden
+        background: rgba(255, 255, 255, 0.2)
+        color: #fff
+        width: 58px
+        height: 20px
+        border-radius: 4px
+        font-size: 11px
+        border: none
+        outline: none
+        margin-top: 12px
+        margin-bottom: 20px
+        transition: background 0.7s ease
+
+        &:hover
+            background: rgba(255, 255, 255, 0.4)
+    
+    &.active
+        opacity: 1
+        div
+            box-shadow: rgb(0 0 0 / 16%) 0px 2px 4px 0px
+  
+        button
+            visibility: visible
+
+
+    div
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        background: rgba(255, 255, 255, 0.15)
+        width: 160px
+        height: 96px
+        border-radius: 10px
+        margin-top: 20px
+        cursor: pointer
+        transition: box-shadow 0.7s ease
+
+        &:hover
+            box-shadow: rgb(0 0 0 / 16%) 0px 2px 4px 0px
+
+            p
+                letter-spacing: 0.2em
+
+        p
+            letter-spacing: 0.07em
+            color: #fff
+            font-size: 12px
+            padding-top: 8px
+            margin: 0
+            transition: All 0.4s ease
+        
+        img
+            width: 46px
+            height: 46px
+
