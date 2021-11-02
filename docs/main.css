@@ -36,11 +36,13 @@ body button {
 }
 
 ::-webkit-scrollbar-thumb {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
 }
 
 :-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+  -webkit-border-radius: 10px;
 }
 /*!************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/App/index.sass ***!
@@ -50,7 +52,6 @@ body button {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 .app .logo {
@@ -58,20 +59,52 @@ body button {
 }
 .app .tab {
   display: none;
+  height: 180px;
   width: 960px;
   overflow-y: hidden;
-  overflow-x: scroll;
+  overflow-x: hidden;
 }
 .app .tab.active {
   display: flex;
 }
+.app .tab:hover {
+  overflow-x: scroll;
+}
 .app .sound-tiles {
-  overflow-y: scroll;
+  overflow-y: hidden;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 960px;
   height: 380px;
+}
+.app .sound-tiles:hover {
+  overflow-y: scroll;
+}
+
+@media (max-width: 960px) {
+  .logo {
+    width: 160px;
+  }
+
+  .app .tab {
+    height: 170px;
+    width: 650px;
+  }
+  .app .sound-tiles {
+    width: 650px;
+    height: 400px;
+  }
+}
+@media (max-width: 690px) {
+  .app .tab {
+    height: 150px;
+    width: 360px;
+  }
+  .app .sound-tiles {
+    width: 360px;
+    height: 400px;
+  }
 }
 /*!*****************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Controls/index.sass ***!
@@ -105,12 +138,29 @@ body button {
   background: rgba(255, 255, 255, 0.2);
   opacity: 1;
 }
+
+@media (max-width: 960px) {
+  .controls {
+    width: 650px;
+    height: 60px;
+  }
+}
+@media (max-width: 690px) {
+  .controls {
+    width: 360px;
+    height: 50px;
+    margin-top: 20px;
+  }
+  .controls .left-side, .controls .right-side {
+    width: 130px;
+  }
+}
 /*!******************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/SoundTile/index.sass ***!
   \******************************************************************************************************************************/
 .sound-tile {
-  width: 150px;
-  height: 130px;
+  width: 156px;
+  height: 136px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -157,6 +207,25 @@ body button {
 }
 .sound-tile:hover {
   opacity: 1;
+}
+
+@media (max-width: 960px) {
+  .sound-tile {
+    width: 128px;
+    height: 110px;
+  }
+}
+@media (max-width: 690px) {
+  .sound-tile {
+    width: 110px;
+    height: 104px;
+  }
+  .sound-tile img {
+    width: 40px;
+  }
+  .sound-tile input[type=range] {
+    width: 80px;
+  }
 }
 /*!***************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Preset/index.sass ***!
@@ -225,4 +294,35 @@ body button {
 .preset div img {
   width: 46px;
   height: 46px;
+}
+
+@media (max-width: 960px) {
+  .preset {
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
+  .preset div {
+    width: 130px;
+    height: 80px;
+  }
+  .preset div img {
+    width: 34px;
+  }
+}
+@media (max-width: 690px) {
+  .preset {
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
+  .preset div {
+    width: 120px;
+    height: 70px;
+  }
+  .preset div p {
+    padding: 0;
+    margin: 0;
+  }
+  .preset div img {
+    width: 30px;
+  }
 }
