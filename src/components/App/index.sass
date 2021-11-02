@@ -3,7 +3,7 @@
     height: 100%
     display: flex
     flex-direction: column
-    justify-content: center
+    // justify-content: center
     align-items: center
 
     .logo
@@ -11,18 +11,56 @@
 
     .tab
         display: none
+        height: 180px
         width: 960px
         overflow-y: hidden
-        overflow-x: scroll
-
+        overflow-x: hidden
+        
         &.active
             display: flex
 
+        &:hover
+            // overflow-y: scroll
+            overflow-x: scroll
+
+
+
     .sound-tiles
-        overflow-y: scroll
+        overflow-y: hidden
         display: flex
         flex-wrap: wrap
-        justify-content: space-between
+        justify-content: flex-start
         width: 960px
         height: 380px
+
+        &:hover
+            overflow-y: scroll
+
+    
+@media (max-width: 960px)
+
+    .logo
+        width: 160px
+
+    .app
+        .tab
+            height: 170px
+            width: 650px
+
+        .sound-tiles
+            width: 650px
+            height: 400px
+        
+
+@media (max-width: 690px)
+
+    .app
+        .tab
+            height: 150px
+            width: 360px
+
+        .sound-tiles
+            width: 360px
+            height: 400px
+
 
